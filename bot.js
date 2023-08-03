@@ -8,11 +8,6 @@ const acd = process.env.ADMIN_CHAT_ID;
 
 
 const webhookEndpoint = process.env.RANDO; // Replace with your chosen endpoint
-const serverAddress = process.env.SADDR; // Replace with your server address
-
-bot.telegram.setWebhook(`${serverAddress}${webhookEndpoint}`);
-bot.use(bot.webhookCallback(webhookEndpoint));
-
 
 // Handle incoming updates from Telegram
 bot.use(bot.webhookCallback(webhookEndpoint));
@@ -83,8 +78,6 @@ bot.command('createwallet', async (ctx) => {
     }
   });
 
-// Start the bot
-  bot.launch();
 
   // Export the bot instance
 module.exports = bot;

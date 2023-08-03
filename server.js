@@ -5,12 +5,9 @@ const bot = require('./bot'); // Import your bot logic from bot.js
 const app = express();
 
 const PORT = process.env.PORT || 3000;
-
-// Start the bot
-bot.launch();
-
 // Set up webhook endpoint for Telegram bot
 const webhookEndpoint = process.env.RANDO; // Replace with your desired endpoint
+
 app.use(bot.webhookCallback(webhookEndpoint));
 
 // Handle incoming requests to the webhook endpoint
@@ -24,5 +21,8 @@ app.post(webhookEndpoint, (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+// Start the bot
+bot.launch();
 
 
