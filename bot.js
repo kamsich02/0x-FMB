@@ -79,6 +79,17 @@ bot.command('createwallet', async (ctx) => {
     }
   });
 
+  // bot.js
+// ... (other code)
+
+// Start the bot
+bot.launch().then(() => {
+    console.log('Bot is running!');
+  }).catch((err) => {
+    console.error('Error starting the bot:', err);
+  });
+  
+
 
   // Export the bot instance
 module.exports = bot;

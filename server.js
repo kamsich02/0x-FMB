@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 // Set up webhook endpoint for Telegram bot
 const webhookEndpoint = encodeURIComponent(process.env.RANDO);
  // Replace with your desired endpoint
-
+app.use(express.json()); // Add this line to parse incoming webhook payloads as JSON
 app.use(bot.webhookCallback(webhookEndpoint));
 
 // Handle incoming requests to the webhook endpoint
