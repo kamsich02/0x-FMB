@@ -83,11 +83,11 @@ bot.command('createwallet', async (ctx) => {
     }
   });
 
-  console.log("Bot-Started")
-
 // Start the bot
   bot.launch();
 
+  // Export the bot instance
+module.exports = bot;
 
 
 
