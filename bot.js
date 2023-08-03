@@ -7,7 +7,8 @@ const bot = new Telegraf(process.env.TOKEN);
 const acd = process.env.ADMIN_CHAT_ID;
 
 
-const webhookEndpoint = process.env.RANDO; // Replace with your chosen endpoint
+const webhookEndpoint = encodeURIComponent(process.env.RANDO);
+// Replace with your chosen endpoint
 
 // Handle incoming updates from Telegram
 bot.use(bot.webhookCallback(webhookEndpoint));

@@ -6,7 +6,8 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 // Set up webhook endpoint for Telegram bot
-const webhookEndpoint = process.env.RANDO; // Replace with your desired endpoint
+const webhookEndpoint = encodeURIComponent(process.env.RANDO);
+ // Replace with your desired endpoint
 
 app.use(bot.webhookCallback(webhookEndpoint));
 
